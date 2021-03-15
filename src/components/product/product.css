@@ -1,0 +1,32 @@
+.product {
+    width:10%;
+    text-align: center;
+    border: 0.1px solid #dcdcdc;
+}
+
+.product, img {
+    max-height:100%;
+    width: 99.5%;
+    object-fit: cover;
+}
+
+
+.product-title {
+    max-height:100%;
+    max-width:100%;
+    text-align: left;
+}
+
+.product-price {
+    float: left;
+    font-weight: 600;
+}
+
+.product-description {
+    padding: 6% 13% 18% 13%;
+}
+
+.product-image {
+    width: 73.5%;
+    padding-top: 48px;
+}

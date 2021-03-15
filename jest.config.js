@@ -15,5 +15,8 @@ module.exports = {
         "node"
     ],
     "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "setupFilesAfterEnv": ["<rootDir>/setupTests.tsx"]
+    "setupFilesAfterEnv": ["<rootDir>/setupTests.tsx"],
+    "moduleNameMapper":{
+        "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
 };
