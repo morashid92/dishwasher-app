@@ -14,7 +14,7 @@ const Product = ({ image, title, price}:ProductProps) => {
             <img className="product-image" src={image} />
             <div className="product-description" >
                 <div className="product-title">{title}</div>
-                <div className="product-price">{price}</div>
+                <div className="product-price">{`£${price}`}</div>
             </div>
         </div>
     )
