@@ -14,7 +14,10 @@ app.get('/dishwashers', (req, res) => {
         url: 'https://api.johnlewis.com/search/api/rest/v2/catalog/products/search/keyword?q=dishwasher%20&key=AIzaSyDD_6O5gUgC4tRW5f9kxC0_76XRC8W7_mI'
     };
     axios(options)
-        .then(response => res.send(response.data));
+        .then(response => {
+            const firstTwentyItems = response.data.products.slice(0, 20);
+            res.send(firstTwentyItems)
+        });
 });
 
 app.listen(3001, () => {

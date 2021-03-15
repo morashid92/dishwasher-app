@@ -1,6 +1,7 @@
 import Product from "../product/product";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import './app.css';
 
 const App: React.FC = () => {
     const [results, setResults] = useState([]);
@@ -9,7 +10,7 @@ const App: React.FC = () => {
     useEffect(() => {
         const getAllDishwashers = async () => {
             const result = await axios('http://localhost:3001/dishwashers');
-            setResults(result.data.products)
+            setResults(result.data)
         };
 
         getAllDishwashers();
