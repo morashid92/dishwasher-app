@@ -6,7 +6,7 @@
 
 .product, img {
     max-height:100%;
-    width: 99.5%;
+    width: 100%;
     object-fit: cover;
 }
 
