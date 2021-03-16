@@ -17,6 +17,8 @@ const App: React.FC = () => {
     }, []);
 
     return (
+        <>
+        <h1 tabIndex={-1} hidden> 20 results of Dishwashers</h1>
         <div className="container">
             { results.map((result: any, index: number) => (
                 <Product
@@ -27,6 +29,7 @@ const App: React.FC = () => {
                     image={result.image}/>
             ))}
         </div>
+        </>
     )
 };
 

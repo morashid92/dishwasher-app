@@ -10,10 +10,10 @@ interface ProductProps {
 const Product: React.FC<ProductProps> = ({ image, title, price }) => {
     return (
         <div className="product">
-            <img className="product-image" src={image} />
+            <img className="product-image" src={image} alt="image of dishwasher" />
             <div className="product-description" >
-                <div className="product-title">{title}</div>
-                <div className="product-price">{`£${price}`}</div>
+                <div tabIndex={1} className="product-title">{title}</div>
+                <div tabIndex={1} className="product-price">{`£${price}`}</div>
             </div>
         </div>
     )
