@@ -6,6 +6,11 @@
     padding: 7%;
     font-size: 35px;
 }
+.product-details-title {
+    text-align: center;
+    padding-top: 53px;
+    font-size: 30px;
+}
 
 .product-display-offer {
     color: red;
@@ -25,7 +30,6 @@
 
 .product-small-text {
     font-size: 20px;
-    padding-bottom: 10px;
 }
 
 .product-specification {

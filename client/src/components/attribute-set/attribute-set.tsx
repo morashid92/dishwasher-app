@@ -2,10 +2,9 @@ import React from "react";
 import "./attrbitute-set.css";
 
 interface AttributeSetProps {
-    attributes: any
+    attributes: object[]
 }
 const AttributeSet: React.FC<AttributeSetProps> = ({ attributes } ) => {
-    console.log("attributes set", attributes);
     return <div>
         {attributes.map((attribute: any, index: number) => (
             <>

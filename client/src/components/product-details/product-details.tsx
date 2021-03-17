@@ -6,10 +6,6 @@ import AttributeSet from "../attribute-set/attribute-set";
 
 interface ProductDetailProps {
     match: { params: { id: number } }
-    title: string
-    altText: string
-    urls: any
-    attributes: object[]
 }
 
 interface Results {
@@ -23,9 +19,20 @@ interface Results {
     code: string,
     attributes: any
 }
+
 const ProductDetails: React.FC<ProductDetailProps> = ({ match }) => {
     const { params: { id } } = match;
-    const [results, setResults] = useState({});
+    const [results, setResults] = useState<Results>({
+        title: '',
+        altText: '',
+        urls: [],
+        price: '',
+        displaySpecialOffer: '',
+        includedService: '',
+        productInformation: '',
+        code: '',
+        attributes: []
+    });
     useEffect(() => {
         const getDishwasher = async () => {
             const result = await axios(`http://localhost:3001/dishwasher/${id}`);
@@ -35,16 +42,13 @@ const ProductDetails: React.FC<ProductDetailProps> = ({ match }) => {
         getDishwasher();
     }, []);
 
-
-    const { title, altText, urls, price, displaySpecialOffer, includedService, productInformation, code } = results;
-    const { attributes }: { attributes: object[] } = results;
-
-    console.log("attributes", attributes && attributes.length)
+    const { title, altText, urls, price, displaySpecialOffer, includedService, productInformation, code, attributes }: Results = results
     return (
         <div className="product-details-container">
-            <img src="//johnlewis.scene7.com/is/image/JohnLewis/238078364?" />
+            <div className="product-details-title">{title}</div>
+            <img src="//johnlewis.scene7.com/is/image/JohnLewis/238078364?" alt={altText} />
             <div className="product-details">
-                <Price price={price} />
+                <Price price={price} floatLeft={false}/>
                 {displaySpecialOffer && <div className="product-display-offer">{displaySpecialOffer}</div>}
                 {includedService && <div className="product-small-text">{includedService}</div>}
                 <p>Product Information</p>
