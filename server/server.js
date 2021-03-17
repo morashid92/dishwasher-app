@@ -20,6 +20,27 @@ app.get('/dishwashers', (req, res) => {
         });
 });
 
+app.get('/dishwasher/:id', (req, res) => {
+    const options = {
+        url: `https://api.johnlewis.com/mobile-apps/api/v1/products/${req.params.id}`
+    };
+    axios(options)
+        .then(response => {
+            const { title, price, details, displaySpecialOffer, additionalServices: { includedServices }, code } = response.data;
+            res.send({
+                title,
+                altText: response.data.media.images.altText,
+                urls: response.data.media.images.urls,
+                price: price.now,
+                productInformation: details.productInformation,
+                displaySpecialOffer,
+                includedService: includedServices[0],
+                attributes: details.features[0].attributes,
+                code
+            })
+        });
+});
+
 app.listen(3001, () => {
         console.log('Express server is running on localhost:3001')
     }

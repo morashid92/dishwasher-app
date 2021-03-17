@@ -1,0 +1,10 @@
+.attribute-value {
+    position: relative;
+    float: right;
+}
+
+.attribute-name {
+    width: 50%;
+    display: inline-block;
+}
+

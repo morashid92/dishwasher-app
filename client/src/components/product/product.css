@@ -17,11 +17,6 @@
     text-align: left;
 }
 
-.product-price {
-    float: left;
-    font-weight: 600;
-}
-
 .product-description {
     padding: 6% 13% 18% 13%;
 }

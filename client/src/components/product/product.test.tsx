@@ -37,7 +37,7 @@ test('renders the price of the product', () => {
     };
     const productWrapper = shallow(<Product {...props} />);
 
-    expect(productWrapper.find('.product-price').text()).toEqual('£529.00');
+    expect(productWrapper.find('Price').length).toEqual(1);
 });
 
 test('renders the image of the product', () => {

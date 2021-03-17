@@ -1,11 +1,14 @@
 import Product from "../product/product";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ProductDetails from '../product-details/product-details';
 import './app.css';
+
+import ProductSet from "../product-set/product-set";
 
 const App: React.FC = () => {
     const [results, setResults] = useState([]);
-
 
     useEffect(() => {
         const getAllDishwashers = async () => {
@@ -17,19 +20,18 @@ const App: React.FC = () => {
     }, []);
 
     return (
-        <>
-        <h1 tabIndex={-1} hidden> 20 results of Dishwashers</h1>
-        <div className="container">
-            { results.map((result: any, index: number) => (
-                <Product
-                    key={index}
-                    productId="1234"
-                    title={result.title}
-                    price={result.price.now}
-                    image={result.image}/>
-            ))}
-        </div>
-        </>
+        <Router>
+            <h1 tabIndex={-1} hidden> 20 results of Dishwashers</h1>
+            <Switch>
+                <Route
+                    exact
+                    path="/"
+                    render={(props) =>
+                        <ProductSet results={results} />}
+                />
+                <Route path="/product/:id" component={ProductDetails} />
+            </Switch>
+        </Router>
     )
 };
 

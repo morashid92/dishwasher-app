@@ -4,14 +4,15 @@
   "scripts": {
     "start": "webpack serve --config webpack.dev.config.ts",
     "build": "webpack --config webpack.prod.config.ts",
-    "test:unit": "jest src/components",
-    "test:browser": "jest src/end-to-end"
+    "test:unit": "jest -c jest.config.js",
+    "test:browser": "jest --config puppeteer-jest-config.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
     "identity-obj-proxy": "^3.0.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -26,6 +27,7 @@
     "@types/jest": "^26.0.20",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.7",
     "@types/webpack": "^4.41.25",
     "@types/webpack-dev-server": "^3.11.1",
     "@typescript-eslint/eslint-plugin": "^4.11.1",

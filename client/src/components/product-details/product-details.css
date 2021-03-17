@@ -1,0 +1,45 @@
+.product-details-container img {
+    border-bottom: 20.1px solid #4F4F4F;
+}
+
+.product-details {
+    padding: 7%;
+    font-size: 35px;
+}
+
+.product-display-offer {
+    color: red;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 25px;
+}
+
+.product-price {
+    float: none;
+}
+
+.product-borders-top {
+    border-spacing: 5px;
+    border-top: 0.1px solid #4F4F4F;
+}
+
+.product-small-text {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.product-specification {
+    margin-top: 10px;
+    margin-bottom: 1px;
+    position: absolute;
+}
+.product-specification-value {
+    float: right;
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+    /* For landscape layouts only */
+}

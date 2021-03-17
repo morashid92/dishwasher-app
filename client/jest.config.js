@@ -1,12 +1,11 @@
 module.exports = {
-    "preset": "jest-puppeteer",
     "roots": [
-        "<rootDir>/src"
+        "<rootDir>/src/components"
     ],
     "transform": {
         "^.+\\.tsx?$": "ts-jest"
     },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(tsx|js)?$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test))\\.(tsx|js)?$",
     "moduleFileExtensions": [
         "ts",
         "tsx",
@@ -20,8 +19,5 @@ module.exports = {
     "moduleNameMapper":{
         "\\.(css|less|scss|sass)$": "identity-obj-proxy"
     },
-    "testEnvironment": './custom_environment.js',
-    "testTimeout": 60000,
-    "globalSetup": './global-setup.js',
-    "globalTeardown": './global-teardown.js'
+    "testTimeout": 60000
 };
