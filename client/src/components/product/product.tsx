@@ -1,7 +1,7 @@
 import React from "react";
 import './product.css';
 import Price from "../price/price";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 interface ProductProps {
     productId: string

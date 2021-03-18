@@ -3,9 +3,9 @@ import Product from "../product/product";
 
 
 interface ProductProps {
-    results: any,
-    productId: string
+    results: any
 }
+
 const ProductSet: React.FC<ProductProps> = ({ results }) => {
     return <div className="container">
         {results.map((result: any, index: number) => (
