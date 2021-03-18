@@ -25,7 +25,7 @@ const DetailList: React.FC<DetailListInterface> = ({title, altText, urls, price,
                 {displaySpecialOffer && <div className="product-display-offer">{displaySpecialOffer}</div>}
                 {includedService && <div className="product-small-text">{includedService}</div>}
                 <p>Product Information</p>
-                <div className="product-small-text" dangerouslySetInnerHTML={{__html: productInformation}}></div>
+                <div className="product-small-text product-details-paragraph" dangerouslySetInnerHTML={{__html: productInformation}}></div>
                 <div className="product-small-text">{`Product code: ${code}`}</div>
                 <div className="product-borders-top"></div>
                 <p>Product specification</p>

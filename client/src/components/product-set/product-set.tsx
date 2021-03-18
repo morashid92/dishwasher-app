@@ -1,7 +1,6 @@
 import React from "react";
 import Product from "../product/product";
 
-
 interface ProductProps {
     results: any
 }
@@ -14,7 +13,8 @@ const ProductSet: React.FC<ProductProps> = ({ results }) => {
                 productId={result.productId}
                 title={result.title}
                 price={result.price.now}
-                image={result.image}/>
+                image={result.image}
+            />
         ))}
     </div>
 };
