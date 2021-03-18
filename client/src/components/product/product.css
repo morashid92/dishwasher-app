@@ -1,5 +1,8 @@
+a { color: inherit; }
+
 .product {
     width:10%;
+    height: 100%;
     text-align: center;
     border: 0.1px solid #4F4F4F;
 }
@@ -9,7 +12,6 @@
     width: 100%;
     object-fit: cover;
 }
-
 
 .product-title {
     max-height:100%;
