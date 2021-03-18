@@ -2,6 +2,9 @@ import Slider from "../slider/slider";
 import Price from "../price/price";
 import AttributeSet from "../attribute-set/attribute-set";
 import React from "react";
+import dompurify from 'dompurify';
+
+const sanitizer = dompurify.sanitize;
 
 interface DetailListInterface {
     title: string,
@@ -25,7 +28,7 @@ const DetailList: React.FC<DetailListInterface> = ({title, altText, urls, price,
                 {displaySpecialOffer && <div className="product-display-offer">{displaySpecialOffer}</div>}
                 {includedService && <div className="product-small-text">{includedService}</div>}
                 <p>Product Information</p>
-                <div className="product-small-text product-details-paragraph" dangerouslySetInnerHTML={{__html: productInformation}}></div>
+                <div className="product-small-text product-details-paragraph" dangerouslySetInnerHTML={{__html: sanitizer(productInformation)}}></div>
                 <div className="product-small-text">{`Product code: ${code}`}</div>
                 <div className="product-borders-top"></div>
                 <p>Product specification</p>
