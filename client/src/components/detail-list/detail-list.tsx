@@ -9,7 +9,7 @@ const sanitizer = dompurify.sanitize;
 interface DetailListInterface {
     title: string,
     altText: string,
-    urls: string[],
+    images: any,
     price: string,
     displaySpecialOffer: string,
     includedService: string,
@@ -18,11 +18,11 @@ interface DetailListInterface {
     attributes: any,
 }
 
-const DetailList: React.FC<DetailListInterface> = ({title, altText, urls, price, displaySpecialOffer, includedService, productInformation, code, attributes}) => {
+const DetailList: React.FC<DetailListInterface> = ({title, altText, price, displaySpecialOffer, includedService, productInformation, code, attributes, images}) => {
     return (
         <div className="product-details-container">
             <div className="product-details-title">{title}</div>
-            <Slider urls={urls} altText={altText}/>
+            <Slider images={images} />
             <div className="product-details">
                 <Price price={price} floatLeft={false}/>
                 {displaySpecialOffer && <div className="product-display-offer">{displaySpecialOffer}</div>}

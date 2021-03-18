@@ -43,5 +43,3 @@ describe(
     },
     timeout,
 );
-
-//write test for render of paragraph on product details page

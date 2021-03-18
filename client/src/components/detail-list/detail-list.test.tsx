@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 const detailData = {
     title: 'test title',
     altText: 'some image',
-    urls: ['www.testurl.com', 'www.testurl-another.com'],
+    images: ['<img src="www.testurl.com" />', '<img src=www.testurl-another.com />'],
     price: '500.00',
     displaySpecialOffer: 'test display offer',
     includedService: 'test included service',
@@ -27,8 +27,7 @@ test('renders the Slider with correct url and alt text', () => {
 
     expect(detailListWrapper.find('Slider')).toHaveLength(1);
     expect(detailListWrapper.find('Slider').props()).toEqual({
-        altText: "some image",
-        urls: ["www.testurl.com", "www.testurl-another.com"]
+        images: ['<img src="www.testurl.com" />', '<img src=www.testurl-another.com />']
     });
 });
 
@@ -93,7 +92,7 @@ test('renders the AttributesSet if it is passed', () => {
     const detailData = {
         title: 'test title',
         altText: 'some image',
-        urls: ['www.testurl.com', 'www.testurl-another.com'],
+        images: ['<img src="www.testurl.com" />', '<img src=www.testurl-another.com />'],
         price: '500.00',
         displaySpecialOffer: 'test display offer',
         includedService: 'test included service',

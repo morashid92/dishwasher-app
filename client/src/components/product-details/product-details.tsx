@@ -28,17 +28,22 @@ const ProductDetails: ({match}: { match: any }) => false | any = ({ match }) => 
         code: '',
         attributes: [],
     });
+    const [images, setImages] = useState([]);
     useEffect(() => {
         const getDishwasher = async () => {
             const result = await axios(`http://localhost:3001/dishwasher/${id}`);
+            const img = result.data.urls.map((src: any) =>
+                <img src={src} alt=""/>
+            )
             setProductResults(result.data)
+            setImages(img)
         };
 
         getDishwasher();
     }, []);
 
     return (
-         <DetailList {...productResults} />
+         <DetailList {...productResults} images={images} />
     )
 };
 

@@ -1,17 +1,19 @@
 import React from "react";
-import Carousel from 'nuka-carousel';
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 
 interface SliderProps {
-    urls: string[]
-    altText: string
+    images: any
 }
-const Slider: React.FC<SliderProps> = ({ urls , altText}) => {
+
+const Slider: React.FC<SliderProps> = ({ images }) => {
     return <>
-        <Carousel>
-            {urls.map((url, index) => {
-                return (<img key={index} src={url} alt={altText} /> )
-            })}
-        </Carousel>
+        <AliceCarousel
+            items={images}
+            autoPlayInterval={2000}
+            autoPlayDirection="rtl"
+            autoPlay={true}
+        />
     </>
 };
 
