@@ -51,8 +51,9 @@ As part of good practice, I performed a series of accessibility checks to ensure
 
 
 ## Security
-React offers sanitizing out of the box which is another great reason to be using it. Furthermore, I have made use of a libraray called Dompurify which will help to sanitize the html code coming from the paragraph for the product information part. 
+React offers sanitizing out of the box which is another great reason to be using it. Furthermore, I have made use of a library called Dompurify which will help to sanitize the html code coming from the paragraph for the product information part. 
 
+Storing keys in files is never a good thing but due to time constraints I have kept THE URL with the API key in for now. I would definitely use a `.env` file in a real life scenario. 
 
 
 
