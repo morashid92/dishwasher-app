@@ -33,7 +33,7 @@ const ProductDetails: ({match}: { match: any }) => false | any = ({ match }) => 
         const getDishwasher = async () => {
             const result = await axios(`http://localhost:3001/dishwasher/${id}`);
             const img = result.data.urls.map((src: any) =>
-                <img src={src} alt=""/>
+                <img src={src} alt={result.data.altText} />
             )
             setProductResults(result.data)
             setImages(img)

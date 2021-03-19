@@ -25,7 +25,7 @@ const App: React.FC = () => {
                 <Route
                     exact
                     path="/"
-                    render={(props) =>
+                    render={() =>
                         <ProductSet results={results} />}
                 />
                 <Route path="/product/:id" component={ProductDetails} />
