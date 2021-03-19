@@ -15,7 +15,6 @@ describe(
         });
 
         it('Opens a product details page when clicking on a product', async () => {
-            const firstProductSelector = '[class="container"] > :first-child';
             await page.goto('http://localhost:4000');
             await page.waitForTimeout(4000);
 
