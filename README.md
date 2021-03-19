@@ -1,3 +1,7 @@
+Firstly, I would like to say thank you and I have completed the mandatory challenge which is to create a page displaying dishwashers following the optional dishwasher detail page. Although I did not get round to completing the landscape view, I have tried covering various aspects such as styling using css, testing and accessibility considerations.
+
+# Prerequisites
+
 Node Version
 `14.0.0`
 
@@ -5,6 +9,7 @@ Node Version
 This project contains a server side proxy that makes calls to an external API which makes use of the cors middleware to allow Cross-Origin Resource Sharing. It also takes only the data required in order to display a list of dishwashers `/dishwashers` and also exposes an endpoint for a specific product `/dishwasher/:id`.
 
 There is also a client side application which is written in Typescript and React framework which is chosen as it gives us the benefit of being easy to read, test and write re usable code/components. The choice of Typescript enforces typing and thus eliminates bugs that can be caused by things like wrong data types or unused functions and is also fully compatible with vanilla Javascript. This app makes use of React Router to render two main routes firstly, the home page `localhost:4000`, which lists only the first 20 dishwashers. Secondly, after clicking on a dishwasher the user is navigated to the product page which then lists the details of that particular dishwasher/product `localhost:4000/product/:id`.
+
 
 ## Running the Application
 In order to run the application, you must run both client and server side apps together: 
