@@ -4,10 +4,10 @@ Node Version
 # dishwasher-app
 This project contains a server side proxy that makes calls to an external API which makes use of the cors middleware to allow Cross-Origin Resource Sharing. It also takes only the data required in order to display a list of dishwashers `/dishwashers` and also exposes an endpoint for a specific product `/dishwasher/:id`.
 
-There is also a client side application which is written in Typescript and React framework which is chosen as it gives us the benefit of being easy to read, test and write re usable code/components. The choice of Typescript enforces typing and thus eliminates bugs that can be caused by things like wrong data types or unused functions and is also fully compatible with vanilla Javascript. This app makes use of React Router to render two main routes firstly. the home page `/`, which lists only the first 20 the dishwashers. Secondly, after clicking on a dishwasher the user is navigated to the product page which then lists the details of that particular dishwasher/product `/product/:id`.
+There is also a client side application which is written in Typescript and React framework which is chosen as it gives us the benefit of being easy to read, test and write re usable code/components. The choice of Typescript enforces typing and thus eliminates bugs that can be caused by things like wrong data types or unused functions and is also fully compatible with vanilla Javascript. This app makes use of React Router to render two main routes firstly, the home page `localhost:4000`, which lists only the first 20 dishwashers. Secondly, after clicking on a dishwasher the user is navigated to the product page which then lists the details of that particular dishwasher/product `localhost:4000/product/:id`.
 
 ## Running the Application
-In order to run the application, you must run both client and server side apps: 
+In order to run the application, you must run both client and server side apps together: 
 
 ### Start Server
 On a new terminal, change directory to `/server` and then run:
@@ -25,15 +25,15 @@ On a separate terminal, change directory to `/client` and then run:
 ### Unit Tests
 The unit tests are written using the Jest library. This is recommended by the React community and hence a great choice for unit testing. The tests also make use of Enzyme to test that the individual components are tested using html elements and classes. The usual format for tests are that for each component, there is a corresponding test in the same directory level. 
 
-To run the unit tests, open a new terminal window and type `npm run test:unit`
+To run the unit tests, assuming you are inside `client/`,  type `npm run test:unit`
 
 ### Browser Tests
 
-The browser tests make use of Jest and Puppeteer and are configured using a set up and teardown approach. This is so that configuration of the tests is kept in one place away from the actual test files. The tests use `jest-environment-node` to configure a node environment and to launch the chromium browser (This is currently set to point to Chromium binary path on my machine and ideally should be running in docker but I have kept it simple for the sake of this coding test).
+The browser tests make use of Jest and Puppeteer and are configured using a set up and teardown approach. This is so that configuration of the tests is kept in one place away from the actual test files. The tests use `jest-environment-node` to configure a node environment and to launch the chromium browser (This is currently set to point to Chromium binary path on my machine and ideally should be running in docker but I have kept it simple for the sake of this coding test and you might have to point it to yours by running `which chromium`).
 
 *Note: The tests also rely on the Server app to be running as they are not yet configured to respond to mocked data which would be my ideal approach*
 
-To run the unit tests, open a new terminal window and type `npm run test:browser`
+To run the browser tests, assuming you are in `client/` run `npm run test:browser`
 
 
 ## Accessibility
