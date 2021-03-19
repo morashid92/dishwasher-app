@@ -2,9 +2,9 @@ Node Version
 `14.0.0`
 
 # dishwasher-app
-This project contains a server side proxy that makes calls to an external API which makes use of the cors middleware to allow Cross-Origin Resource Sharing. It also takes only the data required in order to display a list of dishwashers `/dishwashers` and also exposes an endpoint for a specific product `product/:id`.
+This project contains a server side proxy that makes calls to an external API which makes use of the cors middleware to allow Cross-Origin Resource Sharing. It also takes only the data required in order to display a list of dishwashers `/dishwashers` and also exposes an endpoint for a specific product `/dishwasher/:id`.
 
-There is also a client side application which is written in Typescript and React framework which is used as it is gives us the benefit of being easy to read, test and write re usable code. The choice of Typescript enforces typing and thus eliminates bugs and also fully compatible with vanilla Javascript. This app makes use of React Router to render two main routes firstly. the home page `/`, which lists only the first 20 the dishwashers. Secondly, after clicking on a dishwasher the user is navigated to the product page which them lists the details of that particular dishwasher/product `/product/:id`.
+There is also a client side application which is written in Typescript and React framework which is chosen as it gives us the benefit of being easy to read, test and write re usable code/components. The choice of Typescript enforces typing and thus eliminates bugs that can be caused by things like wrong data types or unused functions and is also fully compatible with vanilla Javascript. This app makes use of React Router to render two main routes firstly. the home page `/`, which lists only the first 20 the dishwashers. Secondly, after clicking on a dishwasher the user is navigated to the product page which then lists the details of that particular dishwasher/product `/product/:id`.
 
 ## Running the Application
 In order to run the application, you must run both client and server side apps: 
