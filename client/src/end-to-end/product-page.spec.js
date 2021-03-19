@@ -50,6 +50,15 @@ describe(
             const productDetailTitle = await page.$eval("title", el => el.textContent);
             expect(productDetailTitle).toEqual('Dishwashers - Bosch Serie 4 SMV46JX01G Fully Integrated Dishwasher');
         });
+
+        it('Renders the Product Information', async () => {
+            await page.goto('http://localhost:4000/product/4215447');
+            await page.waitForTimeout(4000);
+            const productInformationParagraph = '[class="product-small-text product-details-paragraph"] > :first-child';
+            const productDetailTitle = await page.$eval(productInformationParagraph, el => el.textContent);
+
+            expect(productDetailTitle).toContain('The SMV46JX01G Integrated Dishwasher from Bosch can easily take care of the dishes while blending seamlessly');
+        });
     },
     timeout,
 );
