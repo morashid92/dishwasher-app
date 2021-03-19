@@ -28,15 +28,15 @@ const DetailList: React.FC<DetailListInterface> = ({title, altText, price, displ
                 <meta name="description" content={`Details about ${title}`} />
             </Helmet>
             <div className="product-details-container">
-                <div className="product-details-title">{title}</div>
+                <div tabIndex={1} className="product-details-title">{title}</div>
                 <Slider images={images} />
-                <div className="product-details">
+                <div tabIndex={1} className="product-details">
                     <Price price={price} floatLeft={false}/>
-                    {displaySpecialOffer && <div className="product-display-offer">{displaySpecialOffer}</div>}
-                    {includedService && <div className="product-small-text">{includedService}</div>}
+                    {displaySpecialOffer && <div tabIndex={1} className="product-display-offer">{displaySpecialOffer}</div>}
+                    {includedService && <div tabIndex={1} className="product-small-text">{includedService}</div>}
                     <p>Product Information</p>
-                    <div className="product-small-text product-details-paragraph" dangerouslySetInnerHTML={{__html: sanitizer(productInformation)}}></div>
-                    <div className="product-small-text">{`Product code: ${code}`}</div>
+                    <div className="product-small-text product-details-paragraph" tabIndex={1} dangerouslySetInnerHTML={{__html: sanitizer(productInformation)}}></div>
+                    <div className="product-small-text" tabIndex={1} >{`Product code: ${code}`}</div>
                     <div className="product-borders-top"></div>
                     <p>Product specification</p>
                     {attributes && attributes.length > 0 && <AttributeSet attributes={attributes}/>}
